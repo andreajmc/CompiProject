@@ -33,10 +33,16 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Daniel/Documents/Proyecto/New%20P/CompiladorPascal/src/Analizadores/Main.java</file>
-            <file>file:/C:/Users/Daniel/Documents/Proyecto/New%20P/CompiladorPascal/src/Generadores/A_Lexico.flex</file>
-            <file>file:/C:/Users/Daniel/Documents/Proyecto/New%20P/CompiladorPascal/src/Generadores/LexerGenerator.java</file>
-            <file>file:/C:/Users/Daniel/Documents/Proyecto/New%20P/CompiladorPascal/src/Analizadores/PascalCompiler.java</file>
+            <file>file:/C:/Users/andre/Desktop/CompiProject/CompiladorPascal/src/Analizadores/GUI.java</file>
+            <file>file:/C:/Users/andre/Desktop/CompiProject/CompiladorPascal/src/Generadores/A_Sintactico.cup</file>
+            <file>file:/C:/Users/andre/Desktop/CompiProject/CompiladorPascal/src/Pruebas/bueno2.pas</file>
+            <file>file:/C:/Users/andre/Desktop/CompiProject/CompiladorPascal/src/Generadores/CupGenerator.java</file>
+            <file>file:/C:/Users/andre/Desktop/CompiProject/CompiladorPascal/src/Pruebas/bueno1.pas</file>
+            <file>file:/C:/Users/andre/Desktop/CompiProject/CompiladorPascal/src/Pruebas/Prueba.pas</file>
+            <file>file:/C:/Users/andre/Desktop/CompiProject/CompiladorPascal/src/Analizadores/parser.java</file>
+            <file>file:/C:/Users/andre/Desktop/CompiProject/CompiladorPascal/src/Analizadores/AnalizadorTipo.java</file>
+            <file>file:/C:/Users/andre/Desktop/CompiProject/CompiladorPascal/src/Analizadores/TablaSimbolos.java</file>
+            <file>file:/C:/Users/andre/Desktop/CompiProject/CompiladorPascal/src/Analizadores/Lexer.java</file>
         </group>
     </open-files>
 </project-private>

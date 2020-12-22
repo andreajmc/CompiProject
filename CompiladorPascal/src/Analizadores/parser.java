@@ -568,21 +568,20 @@ public class parser extends java_cup.runtime.lr_parser {
 
 
         
+        ArrayList<String> errores = new ArrayList();
         @Override
 	public void report_error(String message, Object info) {
-            System.err.print("Syntax error: " ); 
-            expected();
-            System.err.println("pero se encontró el token \'" + ((Symbol)info).value + "\' en la Linea: " + ((Symbol)info).left + ", Columna: " + ((Symbol)info).right + ". " ); 
+            String mstk ="Syntax error: "+expected()+" Tokens encontrados: {" + ((Symbol)info).value + "} en línea: " + ((Symbol)info).left + ", col: " + ((Symbol)info).right + ". "; 
+            errores.add(mstk);
         }
 
         @Override
 	public void syntax_error(Symbol s){
-            System.err.print("Error Sintáctico: " ); 
-            expected();
-            System.err.println("pero se encontró el token \'" + sym.terminalNames[s.sym] + "\' en la Linea: " + s.left + ", Columna: " + s.right + ". " ); 
-	}
+            String mstk ="Syntax error: "+expected()+" Tokens encontrados: {" + s.value + "} en línea: " + s.left + ", col: " + s.right + ". "; 
+            errores.add(mstk);
+        }
 
-    public void expected(){
+    public String expected(){
         List<Integer> token_list = this.expected_token_ids();
         if (token_list.size() <= 0){
                 token_list = this.expected_token_ids();
@@ -600,11 +599,11 @@ public class parser extends java_cup.runtime.lr_parser {
                     expected_tokens += terminal_name + " , ";
                 }
         }
-        System.err.print("Se esperaba alguno de los siguientes tokens: [" + expected_tokens + "] ");
+        return "Tokens esperados: {" + expected_tokens + "} ";
     };
 
     public void report_fatal_error(String message, Object info) {
-        throw new Error("Error Fatal Sintáctico, no se pudo recuperar del problema.");
+        errores.add("Error Fatal Sintáctico, imposible recuperarse.");
     }
 
     public void unrecovered_syntax_error(Symbol s) {
@@ -638,7 +637,7 @@ class CUP$parser$actions {
                 DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
                 xmlDocument = docBuilder.newDocument();
             } catch (Exception e) {
-                System.err.println("Se han encontrado errores en el arbol: " + e.getMessage());
+                System.err.println("Se han detectado errores en el árbol sintáctico: " + e.getMessage());
             }
         }
     }

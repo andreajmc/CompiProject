@@ -97,6 +97,7 @@ public class TablaSimbolos {
     
     @Override
     public String toString() {
+        String output = "";
         String headers = String.format(
                 formatHeader,
                 "IDENTIFICADOR",
@@ -106,9 +107,9 @@ public class TablaSimbolos {
                 "ES PARAMETRO",
                 "OFFSET"
         );
-        System.out.println(headers);
+        output = output.concat(headers+"/n");
         for (Simbolo S: Simbolos) {
-            String output = String.format(
+           String output2 = String.format(
                     formatBody,
                     S.getId(),
                     S.getTipo(),
@@ -117,7 +118,7 @@ public class TablaSimbolos {
                     String.valueOf(S.isParametro()),
                     String.valueOf(S.getOS())
             );
-            System.out.println(output);
+            output = output.concat(output2);
         }
         /*
         JFrame f = new JFrame(); 
@@ -152,6 +153,6 @@ public class TablaSimbolos {
         f.setSize(800,300);    
         f.setVisible(true);
         */
-        return "";
+        return output;
     }
 }
